@@ -191,7 +191,7 @@ public class SensorPairingService: NSObject, NFCTagReaderSessionDelegate, Sensor
                                         }
                                         
                                         guard sensorType == .libre2  else {
-                                            session.invalidate(errorMessage: PairingError.wrongSensorType.localizedDescription)
+                                            session.invalidate(errorMessage: PairingError.wrongSensorType.localizedDescription + " - \(patchHex)")
                                             self.sendError(PairingError.noSensorData)
                                             return
                                         }
